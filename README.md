@@ -4,6 +4,7 @@ Esta aplicación es una implementación de React con la API DUMMYAPI.IO.
 # Funcionalidades
 
 - Permite visualizar los post con su información de interés.
+  
 ![image](https://github.com/Juandaflorez11/prueba-semana/assets/60432466/c0137014-6da5-4bc7-8efe-5f4c5f240f09)
 
 - Para poder acceder a los comentarios de un post específico se requiere el inicio de sesión, en este caso hecho con sesión de google.
