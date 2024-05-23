@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Juandaflorez11/prueba-semana.git/static/css/main.0cb6af34.css",
-    "main.js": "/Juandaflorez11/prueba-semana.git/static/js/main.7afc9298.js",
-    "index.html": "/Juandaflorez11/prueba-semana.git/index.html",
-    "main.0cb6af34.css.map": "/Juandaflorez11/prueba-semana.git/static/css/main.0cb6af34.css.map",
-    "main.7afc9298.js.map": "/Juandaflorez11/prueba-semana.git/static/js/main.7afc9298.js.map"
+    "main.css": "/prueba-semana/static/css/main.0cb6af34.css",
+    "main.js": "/prueba-semana/static/js/main.1aab37e1.js",
+    "index.html": "/prueba-semana/index.html",
+    "main.0cb6af34.css.map": "/prueba-semana/static/css/main.0cb6af34.css.map",
+    "main.1aab37e1.js.map": "/prueba-semana/static/js/main.1aab37e1.js.map"
   },
   "entrypoints": [
     "static/css/main.0cb6af34.css",
-    "static/js/main.7afc9298.js"
+    "static/js/main.1aab37e1.js"
   ]
 }
