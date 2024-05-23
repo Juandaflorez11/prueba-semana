@@ -15,8 +15,8 @@ const PostDetails = ({ match }) => {
 
   return (
     <div>
-      <h1>{post.title}</h1>
-      <img src={post.image} alt={post.title} />
+      <h1>{post.text}</h1>
+      <img src={post.image} alt={""} />
       <p>{post.text}</p>
       <h2>Comments</h2>
       <ul>

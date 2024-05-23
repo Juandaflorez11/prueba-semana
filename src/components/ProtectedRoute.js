@@ -9,7 +9,7 @@ const ProtectedRoute = ({ element: Element, ...rest }) => {
         return <Navigate to="/" />;
     }
 
-    return <Route {...rest} element={<Element />} />;
+    return <Route {...rest}> {Element}</Route>;
 };
 
 export default ProtectedRoute;
