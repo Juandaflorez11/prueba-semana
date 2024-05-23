@@ -8,7 +8,7 @@ const api = axios.create({
   headers: { 'app-id': APP_ID }
 });
 
-export const fetchPosts = () => api.get('/post');
+export const fetchPosts = () => api.get('/post?page=0&limit=1000');
 export const fetchPostById = (id) => api.get(`/post/${id}`);
 export const fetchComments = (postId) => api.get(`/post/${postId}/comment`);
 export const fetchUsers = () => api.get('/user');

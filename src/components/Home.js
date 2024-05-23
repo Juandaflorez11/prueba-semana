@@ -11,6 +11,7 @@ const Home = () => {
     useEffect(() => {
         fetchTags().then(response => setTags(removeDuplicateTags(response.data.data)));
         fetchPosts().then(response => setPosts(removeDuplicatePosts(response.data.data)));
+        fetchPosts().then(response => setSearched(removeDuplicatePosts(response.data.data)));
     }, []);
 
     const removeDuplicateTags = (tagNames) => {
@@ -44,13 +45,25 @@ const Home = () => {
         fetchPostsByTag(tag);
     };
 
-    const fetchPostsByTag = (tag) => {
-        // Implementar la lógica para filtrar posts por tag
+    const fetchPostsByTag = (selectedTag) => {
+
+        var temp = [];
+        if (selectedTag == null || selectedTag === "") {
+            temp = posts;
+        }
+        else {
+            temp = posts.filter(post => {
+                return post.tags.some(tag => selectedTag.includes(tag));
+            });
+        }
+        setSearched(temp);
     };
+
     const handleTagChange = (event) => {
         const selectedTag = event.target.value;
         setSelectedTag(selectedTag);
         console.log(selectedTag);
+        fetchPostsByTag(selectedTag);
     };
 
     return (
@@ -74,10 +87,10 @@ const Home = () => {
                 </ul>
             </div>
             <div>
-                {posts.map(post => (
-                    <div key={post.id}>
+                {searched.map(post => (
+                    < div key={post.id} >
                         <Link to={`/post/${post.id}`}>
-                            <h3>{post.title}</h3>
+
                             <img src={post.image} alt={post.title} />
                             <p>{post.text}</p>
                             <p>Tags: {post.tags.join(' | ')}</p>
@@ -86,7 +99,7 @@ const Home = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 };
 

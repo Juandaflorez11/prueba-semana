@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPostById, fetchComments } from '../services/api';
 
-const PostDetails = ({ match }) => {
+const PostDetails = ({ id }) => {
+
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
-  const postId = match.params.id;
-
+  const postId = id;
+  console.log(postId);
   useEffect(() => {
     fetchPostById(postId).then(response => setPost(response.data));
     fetchComments(postId).then(response => setComments(response.data.data));
