@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Juandaflorez11/prueba-semana.git/static/css/main.0cb6af34.css",
+    "main.js": "/Juandaflorez11/prueba-semana.git/static/js/main.7afc9298.js",
+    "index.html": "/Juandaflorez11/prueba-semana.git/index.html",
+    "main.0cb6af34.css.map": "/Juandaflorez11/prueba-semana.git/static/css/main.0cb6af34.css.map",
+    "main.7afc9298.js.map": "/Juandaflorez11/prueba-semana.git/static/js/main.7afc9298.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0cb6af34.css",
+    "static/js/main.7afc9298.js"
+  ]
+}
