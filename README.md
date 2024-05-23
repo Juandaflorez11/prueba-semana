@@ -1,3 +1,15 @@
+
+Esta aplicación es una implementación de React con la API DUMMYAPI.IO.
+
+# Funcionalidades
+
+- Permite visualizar los post con su información de interés.
+- Para poder acceder a los comentarios de un post específico se requiere el inicio de sesión, en este caso hecho con sesión de google.
+
+- Tiene un buscador para encontrar una publicación específica a paortir de sus etiquetas, de tal forma que si en la búsqueda etiqueta coincide con la etiqueta de uno o varios post, solo se visualizan estos en pantalla.
+
+Además este buscador se actualiza solo con escribir en él, o de igual forma seleccionando una etiqueta de la selección disponible. Recomendando a su vez las posibles etiquetas que se desean buscar.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
