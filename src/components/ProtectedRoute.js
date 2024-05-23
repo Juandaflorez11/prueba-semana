@@ -4,6 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 
 const ProtectedRoute = ({ element: Element, ...rest }) => {
     const { currentUser } = useContext(AuthContext);
+    console.log(...rest);
 
     if (!currentUser) {
         return <Navigate to="/" />;

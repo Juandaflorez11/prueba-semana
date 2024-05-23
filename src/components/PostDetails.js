@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { fetchPostById, fetchComments } from '../services/api';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+
+
 
 const PostDetails = () => {
+
+  
 
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
@@ -13,6 +18,11 @@ const PostDetails = () => {
     fetchComments(postId).then(response => setComments(response.data.data));
   }, [postId]);
 
+  const { currentUser } = useContext(AuthContext);
+  if (!currentUser) {
+    alert("No se ha registrado, por favor ingrese sesión con google")
+    return <Navigate to="/" />;
+  }
   if (!post) return <div>Loading...</div>;
 
   return (
