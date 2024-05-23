@@ -3,7 +3,7 @@ import { fetchPostById, fetchComments } from '../services/api';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const PostDetails = ({ match }) => {
+const PostDetails = () => {
 
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
@@ -11,7 +11,7 @@ const PostDetails = ({ match }) => {
   useEffect(() => {
     fetchPostById(postId).then(response => setPost(response.data));
     fetchComments(postId).then(response => setComments(response.data.data));
-  });
+  }, [postId]);
 
   if (!post) return <div>Loading...</div>;
 
