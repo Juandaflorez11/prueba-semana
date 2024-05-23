@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPosts, fetchTags } from '../services/api';
 import { Link } from 'react-router-dom';
+import SignIn from './SignIn';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -69,7 +70,9 @@ const Home = () => {
     return (
         <div>
             <h1>Blog Posts</h1>
+
             <div>
+                <SignIn></SignIn>
                 <h2>Tags</h2>
                 <ul>
                     <input
@@ -89,10 +92,9 @@ const Home = () => {
             <div>
                 {searched.map(post => (
                     < div key={post.id} >
+                        <h3>{post.text}</h3>
                         <Link to={`/post/${post.id}`}>
-
                             <img src={post.image} alt={post.title} />
-                            <p>{post.text}</p>
                             <p>Tags: {post.tags.join(' | ')}</p>
                             <p>Author: {post.owner.firstName} {post.owner.lastName}</p>
                         </Link>

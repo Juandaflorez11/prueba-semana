@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPostById, fetchComments } from '../services/api';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const PostDetails = ({ id }) => {
+const PostDetails = ({ match }) => {
 
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
-  const postId = id;
-  console.log(postId);
+  const postId = useParams().id;
   useEffect(() => {
     fetchPostById(postId).then(response => setPost(response.data));
     fetchComments(postId).then(response => setComments(response.data.data));
-  }, [postId]);
+  });
 
   if (!post) return <div>Loading...</div>;
 
@@ -18,16 +19,19 @@ const PostDetails = ({ id }) => {
     <div>
       <h1>{post.text}</h1>
       <img src={post.image} alt={""} />
-      <p>{post.text}</p>
+      <p>Tags: {post.tags.join(' | ')}</p>
       <h2>Comments</h2>
       <ul>
-        {comments.map(comment => (
-          <li key={comment.id}>
-            <p>{comment.message}</p>
-            <p>By: {comment.owner.firstName} {comment.owner.lastName}</p>
-          </li>
-        ))}
+        {
+          comments.length > 0 ?
+            comments.map(comment => (
+              <li key={comment.id}>
+                <p>{comment.message}</p>
+                <p>By: {comment.owner.firstName} {comment.owner.lastName}</p>
+              </li>
+            )) : "No comments"}
       </ul>
+      <Link to={`/`}>Volver</Link>
     </div>
   );
 };
